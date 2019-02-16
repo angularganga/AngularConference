@@ -1,0 +1,14 @@
+<div class="well hover-well thumbnail">
+  <h2>{{ angularEvent.name }}</h2>
+  <div>Date:{{ angularEvent.date }}</div>
+  <div>Time:{{ angularEvent.time }}</div>
+  <div>Price:{{ angularEvent.price }}</div>
+</div>
+<div>
+  <span>Location: {{ angularEvent.location.address }}</span>
+  <span>&nbsp;</span>
+  <span
+    >{{ angularEvent.location.city }}, {{ angularEvent.location.country }}</span
+  >
+</div>
+<button class="btn-btn primary" (click)="handleClickMe()">Click Me</button>
