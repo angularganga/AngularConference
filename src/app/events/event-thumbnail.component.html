@@ -4,11 +4,12 @@
   <div>Time:{{ angularEvent.time }}</div>
   <div>Price:{{ angularEvent.price }}</div>
 </div>
-<div>
+<div *ngIf="angularEvent?.location">
   <span>Location: {{ angularEvent.location.address }}</span>
   <span>&nbsp;</span>
-  <span
-    >{{ angularEvent.location.city }}, {{ angularEvent.location.country }}</span
-  >
+  <span>{{ angularEvent.location.city }}, {{ angularEvent.location.country }}</span>
+</div>
+<div *ngIf="angularEvent?.onlineUrl">
+  OnlineURL : {{angularEvent.onlineUrl}}
 </div>
 <button class="btn-btn primary" (click)="handleClickMe()">Click Me</button>
