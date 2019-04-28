@@ -1,7 +1,12 @@
 <div class="well hover-well thumbnail">
   <h2>{{ angularEvent.name }}</h2>
   <div>Date:{{ angularEvent.date }}</div>
-  <div>Time:{{ angularEvent.time }}</div>
+  <div [ngClass]="getStartTimeClass()" [ngSwitch]="angularEvent?.time">
+    Time:{{ angularEvent.time }}
+    <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+    <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+    <span *ngSwitchDefault>(Normal Start)</span>
+  </div>
   <div>Price:{{ angularEvent.price }}</div>
 </div>
 <div *ngIf="angularEvent?.location">
@@ -13,3 +18,5 @@
   OnlineURL : {{angularEvent.onlineUrl}}
 </div>
 <button class="btn-btn primary" (click)="handleClickMe()">Click Me</button>
+
+<style></style>
